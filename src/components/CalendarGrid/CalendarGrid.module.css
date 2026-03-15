@@ -1,0 +1,218 @@
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+}
+
+.navButton {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.navButton:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.navButton:active {
+  transform: scale(0.95);
+}
+
+.todayButton {
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-blue);
+  color: white;
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-fast);
+}
+
+.todayButton:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.todayButton:active {
+  transform: translateY(0);
+}
+
+.grid {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.dateHeaders {
+  display: flex;
+  gap: var(--cell-gap);
+  padding: 16px 16px 8px 16px;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.habitNameHeader {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+}
+
+.dateHeader {
+  width: var(--cell-size);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 8px 4px;
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.todayHeader {
+  background-color: var(--color-blue-100);
+}
+
+.dateMonth {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dateDay {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.dateDayName {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.habitRows {
+  padding: 8px 16px 16px 16px;
+}
+
+.habitRow {
+  display: flex;
+  gap: var(--cell-gap);
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.habitRow:last-child {
+  border-bottom: none;
+}
+
+.habitName {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.habitColorDot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.habitCells {
+  display: flex;
+  gap: var(--cell-gap);
+}
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 40px;
+  text-align: center;
+}
+
+.emptyState p {
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  max-width: 300px;
+}
+
+@media (max-width: 1024px) {
+  .habitNameHeader {
+    width: 160px;
+  }
+
+  .habitName {
+    width: 160px;
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    padding: 12px;
+  }
+
+  .dateHeaders {
+    padding: 12px 12px 8px 12px;
+  }
+
+  .habitRows {
+    padding: 8px 12px 12px 12px;
+  }
+
+  .habitNameHeader {
+    width: 120px;
+  }
+
+  .habitName {
+    width: 120px;
+    font-size: var(--font-size-sm);
+  }
+
+  .dateHeader {
+    width: calc(var(--cell-size) * 0.8);
+  }
+
+  .dateDay {
+    font-size: 16px;
+  }
+
+  .dateMonth,
+  .dateDayName {
+    font-size: 9px;
+  }
+}
