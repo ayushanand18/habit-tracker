@@ -2,7 +2,7 @@
 import React, { createContext, useContext, useReducer, useEffect, ReactNode } from 'react';
 import { AppState, AppAction } from '../types';
 import { appReducer } from './AppReducer';
-import { loadAppState, saveHabits, saveLogs, saveSettings } from '../services/localStorage';
+import { loadAppState } from '../services/localStorage';
 
 interface AppContextType {
   state: AppState;
